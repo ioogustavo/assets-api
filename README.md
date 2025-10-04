@@ -2,24 +2,24 @@
 
 API RESTful para la gestión de activos (assets) desarrollada con NestJS, Prisma y PostgreSQL.
 
-## 📚 Tabla de Contenido
+## Tabla de Contenido
 
-- [Descripción](#descripción)
-- [Tecnologías](#tecnologías)
-- [Instalación](#instalación)
-- [Configuración](#configuración)
-- [Ejecución del proyecto](#ejecución-del-proyecto)
-- [Documentación Swagger](#documentación-swagger)
-- [Endpoints principales](#endpoints-principales)
+- [Descripción](#descripcion)
+- [Tecnologías](#tecnologias)
+- [Instalación](#instalacion)
+- [Configuración](#configuracion)
+- [Ejecución del proyecto](#ejecucion-del-proyecto)
+- [Documentación Swagger](#documentacion-swagger)
+- [Endpoints](#endpoints)
 - [Autor](#autor)
 
-## 🧠 Descripción
+## Descripcion
 
 Proyecto backend desarrollado con NestJS que implementa un CRUD completo para la gestión de activos (assets).
 Utiliza Prisma ORM para la interacción con una base de datos PostgreSQL y cuenta con documentación interactiva generada con Swagger.
 Incluye validaciones con class-validator y una arquitectura modular escalable.
 
-## ⚙️ Tecnologías
+## Tecnologias
 
 - [NestJS](https://nestjs.com/)
 - [Prisma ORM](https://www.prisma.io/)
@@ -28,7 +28,7 @@ Incluye validaciones con class-validator y una arquitectura modular escalable.
 - [Class Validator](https://github.com/typestack/class-validator)
 - TypeScript
 
-## 🧩 Instalación
+## Instalacion
 
 ```bash
 # Clonar el repositorio
@@ -41,7 +41,7 @@ cd assets-api
 npm install
 ```
 
-## ⚙️ Configuración
+## Configuracion
 
 1. Crear la base de datos en PostgreSQL:
 
@@ -50,10 +50,11 @@ CREATE DATABASE assets_db;
 Importar schema.sql en la base assets_db
 
 2. Crear un nuevo archivo en el directorio raiz, que se llame .env y copiar el contenido del .env.template, luego pegarlo dentro del .env
+3. Copiar los valores que te envié por correo en las variables correspondientes
 
 ```
 
-## ▶️ Ejecución del proyecto
+## Ejecucion del proyecto
 
 ```
 # Ejecuta el proyecto
@@ -66,7 +67,7 @@ npm run build
 npm run start:prod
 ```
 
-## 📖 Documentación Swagger
+## Documentacion Swagger
 
 La documentación interactiva de la API está disponible en:
 
@@ -74,7 +75,7 @@ La documentación interactiva de la API está disponible en:
 http://localhost:3000/api
 ```
 
-# 🚀 Endpoints
+## Endpoints
 
 | Método | Endpoint    | Descripción                |
 | ------ | ----------- | -------------------------- |
@@ -83,7 +84,7 @@ http://localhost:3000/api
 | PUT    | /update/:id | Actualizar un asset por id |
 | DELETE | /delete/:id | Eliminar un asset por id   |
 
-## 👨‍💻 Autor
+## Autor
 
 Rubén Gustavo Altamiranda
 Proyecto desarrollado como challenge técnico de Backend NestJS con Prisma y PostgreSQL.
