@@ -10,8 +10,9 @@ import {
 } from '@nestjs/common';
 import { AssetService } from '../services/asset.service';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UpdateAssetDto } from '../dto/update-asset.dto';
-import { CreateAssetDto } from '../dto/create-asset.dto';
+import { UpdateAssetDto } from '../dto/updateAsset.dto';
+import { CreateAssetDto } from '../dto/createAsset.dto';
+import { AssetResponseDto } from '../dto/responseAsset.dto';
 
 @ApiTags('Assets')
 @Controller()
@@ -24,8 +25,8 @@ export class AssetController {
     status: 201,
     description: 'Asset creado correctamente',
   })
-  create(@Body() createAssetDto: CreateAssetDto) {
-    return this.assetService.getHello(createAssetDto);
+  create(@Body() createAssetDto: CreateAssetDto): Promise<AssetResponseDto> {
+    return this.assetService.create(createAssetDto);
   }
 
   @Get('all')
@@ -34,8 +35,8 @@ export class AssetController {
     status: 200,
     description: 'Lista de assets obtenida correctamente',
   })
-  getHello2(): string {
-    return this.assetService.getHello();
+  getAll(): Promise<AssetResponseDto[]> {
+    return this.assetService.findAll();
   }
 
   @Put('update/:id')
@@ -52,8 +53,8 @@ export class AssetController {
   update(
     @Param('id', ParseIntPipe) id: number,
     @Body() updateAssetDto: UpdateAssetDto,
-  ) {
-    return this.assetService.getHello();
+  ): Promise<AssetResponseDto> {
+    return this.assetService.update(id, updateAssetDto);
   }
 
   @Delete('delete/:id')
@@ -67,7 +68,7 @@ export class AssetController {
     status: 404,
     description: 'Asset no encontrado',
   })
-  remove(@Param('id', ParseIntPipe) id: number) {
-    return this.assetService.getHello();
+  remove(@Param('id', ParseIntPipe) id: number): Promise<string> {
+    return this.assetService.remove(id);
   }
 }
