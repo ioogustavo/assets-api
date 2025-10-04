@@ -1,73 +1,89 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# 🧩 Assets API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+API RESTful para la gestión de activos (assets) desarrollada con NestJS, Prisma y PostgreSQL.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 📚 Tabla de Contenido
 
-## Description
+- [Descripción](#descripción)
+- [Tecnologías](#tecnologías)
+- [Instalación](#instalación)
+- [Configuración](#configuración)
+- [Ejecución del proyecto](#ejecución-del-proyecto)
+- [Documentación Swagger](#documentación-swagger)
+- [Endpoints principales](#endpoints-principales)
+- [Autor](#autor)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🧠 Descripción
 
-## Installation
+Proyecto backend desarrollado con NestJS que implementa un CRUD completo para la gestión de activos (assets).
+Utiliza Prisma ORM para la interacción con una base de datos PostgreSQL y cuenta con documentación interactiva generada con Swagger.
+Incluye validaciones con class-validator y una arquitectura modular escalable.
 
-```bash
-$ npm install
-```
+## ⚙️ Tecnologías
 
-## Running the app
+- [NestJS](https://nestjs.com/)
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Swagger](https://swagger.io/)
+- [Class Validator](https://github.com/typestack/class-validator)
+- TypeScript
+
+## 🧩 Instalación
 
 ```bash
-# development
-$ npm run start
+# Clonar el repositorio
+git clone https://github.com/ioogustavo/assets-api.git
 
-# watch mode
-$ npm run start:dev
+# Entrar al directorio
+cd assets-api
 
-# production mode
-$ npm run start:prod
+# Instalar dependencias
+npm install
 ```
 
-## Test
+## ⚙️ Configuración
 
-```bash
-# unit tests
-$ npm run test
+1. Crear la base de datos en PostgreSQL:
 
-# e2e tests
-$ npm run test:e2e
+```sql
+CREATE DATABASE assets_db;
+Importar schema.sql en la base assets_db
 
-# test coverage
-$ npm run test:cov
+2. Crear un nuevo archivo en el directorio raiz, que se llame .env y copiar el contenido del .env.template, luego pegarlo dentro del .env
+
 ```
 
-## Support
+## ▶️ Ejecución del proyecto
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```
+# Ejecuta el proyecto
+npm start
 
-## Stay in touch
+# Compila el proyecto
+npm run build
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+# Ejecuta en producción
+npm run start:prod
+```
 
-## License
+## 📖 Documentación Swagger
 
-Nest is [MIT licensed](LICENSE).
+La documentación interactiva de la API está disponible en:
+
+```
+http://localhost:3000/api
+```
+
+# 🚀 Endpoints
+
+| Método | Endpoint    | Descripción                |
+| ------ | ----------- | -------------------------- |
+| POST   | /create     | Crear un nuevo asset       |
+| GET    | /all        | Listar todos los assets    |
+| PUT    | /update/:id | Actualizar un asset por id |
+| DELETE | /delete/:id | Eliminar un asset por id   |
+
+## 👨‍💻 Autor
+
+Rubén Gustavo Altamiranda
+Proyecto desarrollado como challenge técnico de Backend NestJS con Prisma y PostgreSQL.
