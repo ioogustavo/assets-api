@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { PrismaService } from 'prisma/prisma.service';
+//import { PrismaService } from 'prisma/prisma.service';
+import { PrismaService } from '../../../prisma/prisma.service';
 import { CreateAssetDto } from '../dto/createAsset.dto';
 import { AssetResponseDto } from '../dto/responseAsset.dto';
 import { UpdateAssetDto } from '../dto/updateAsset.dto';
