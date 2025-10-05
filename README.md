@@ -9,6 +9,7 @@ API RESTful para la gestión de activos (assets) desarrollada con NestJS, Prisma
 - [Instalación](#instalacion)
 - [Configuración](#configuracion)
 - [Ejecución del proyecto](#ejecucion-del-proyecto)
+- [Tests](#tests)
 - [Documentación Swagger](#documentacion-swagger)
 - [Endpoints](#endpoints)
 - [Autor](#autor)
@@ -66,12 +67,30 @@ npm run build
 npm run start:prod
 ```
 
+## Tests
+
+La API cuenta con **tests unitarios** para los `Controllers` y `Services` usando **Jest** y **NestJS Testing Module**.
+
+### Ejecutar todos los tests
+
+```bash
+# Ejecutar tests
+npm test
+
+# Ejecutar tests en modo verbose (muestra cada test individual)
+npx jest --verbose
+
+# Ejecutar tests en modo watch (se ejecutan automáticamente al guardar cambios)
+npm test -- --watch
+
 ## Documentacion Swagger
 
 La documentación interactiva de la API está disponible en:
 
 ```
+
 http://localhost:3000/api
+
 ```
 
 ## Endpoints
@@ -87,3 +106,4 @@ http://localhost:3000/api
 
 Rubén Gustavo Altamiranda
 Proyecto desarrollado como challenge técnico de Backend NestJS con Prisma y PostgreSQL.
+```
