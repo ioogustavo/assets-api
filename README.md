@@ -48,11 +48,10 @@ npm install
 ```sql
 CREATE DATABASE assets_db;
 Importar schema.sql en la base assets_db
+```
 
 2. Crear un nuevo archivo en el directorio raiz, que se llame .env y copiar el contenido del .env.template, luego pegarlo dentro del .env
 3. Copiar los valores que te envié por correo en las variables correspondientes
-
-```
 
 ## Ejecucion del proyecto
 
